@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-01-19T15:10:49.667Z</updated>
+  <updated>2022-01-19T15:13:28.094Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2022/01/19/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/"/>
     <id>http://example.com/2022/01/19/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%85%A5%E9%97%A8/</id>
     <published>2022-01-19T14:57:51.743Z</published>
-    <updated>2022-01-19T15:10:49.667Z</updated>
+    <updated>2022-01-19T15:13:28.094Z</updated>
     
     <content type="html"><![CDATA[<h1 id="算术表达式"><a href="#算术表达式" class="headerlink" title="算术表达式"></a>算术表达式</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>, <span class="number">1</span>+<span class="number">2</span>*<span class="built_in">sqrt</span>(<span class="number">3</span>)/(<span class="number">5</span><span class="number">-0.1</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><ul><li>整数值用%d输出，实数值用%f输出</li><li>整数/整数 = 整数， 浮点数/浮点数 =  浮点数</li><li>C语言类型的自动转换</li><li>C语言类型的强制转换</li></ul></blockquote><h1 id="变量及其输入"><a href="#变量及其输入" class="headerlink" title="变量及其输入"></a>变量及其输入</h1><p><strong>例题1-1　圆柱体的面积</strong></p><p>输入底面半径r和高h，输出圆柱体的面积，保留3位小数，格式见样例。<br>样例输入：<br>3.5<br>9<br>样例输出：<br>Area = 247.889</p><p>【分析】<br>圆柱体表面积 = 底面积*2+侧面积<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> r, h, s1, s2, s;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf&quot;</span>, &amp;r, &amp;h);</span><br><span class="line">    s1 = pi*r*r;</span><br><span class="line">    s2 = <span class="number">2</span>*pi*r*h;</span><br><span class="line">    s = s1*<span class="number">2.0</span> + s2;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Area = %.3f\n&quot;</span>, s);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><blockquote><ul><li>scanf中的占位符和变量的数据类型一一对应，且每个变量前需要加“&amp;”符号（取址符）。</li><li>在算法比赛中，输入前不要打印提示信息。输出完毕后应立即终止程序，不要等待用户按键，因为输入输出过程都是自动的，没有人工干预。</li><li>在算法比赛中不要使用头文件conio.h,包括getch(),clrscr()等函数。</li><li>在算法竞赛中，每行输出均应以回车符结束，包括最后一行。除特别说明，每行的行首不应有空格，但行末通常可以有多余空格。另外，输出的每两个数或者字符串应以单个空格隔开。</li><li>尽量用const关键字声明常数。</li><li>赋值是个动作，先计算右边的值，再赋值给左边的变量，覆盖它原来的值。=、+=、-=、*=、%=等赋值运算符都是右结合。</li><li>printf的格式字符串中可以包含其他可打印符号，打印时原样输出。</li></ul></blockquote>]]></content>
     
@@ -30,7 +30,9 @@
     
     
     
-    <category term="算法，入门" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95%EF%BC%8C%E5%85%A5%E9%97%A8/"/>
+    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="入门" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/%E5%85%A5%E9%97%A8/"/>
     
     
     <category term="C++" scheme="http://example.com/tags/C/"/>
